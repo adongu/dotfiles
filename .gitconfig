@@ -1,0 +1,15 @@
+[user]
+	name = Alex Liang
+	email = Alex.Liang@apps.ask.com
+
+[alias]
+	st = status
+	cm = commit -m
+	co = checkout
+	# previous branch
+	cob = checkout -
+	coma = checkout master
+	br = branch
+	p = push origin
+	unstage = reset HEAD --
+	last = log -1 HEAD
