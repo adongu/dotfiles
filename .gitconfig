@@ -1,0 +1,57 @@
+[user]
+	name = Alex Liang
+	email = [ENTER EMAIL HERE]
+
+[alias]
+	st = status
+	cm = commit -m
+	co = checkout
+	# previous branch
+	cob = checkout -
+	coma = checkout master
+	up = pull --rebase --autostash
+	br = branch
+	p = push origin
+	fpush = push --force
+	unstage = reset --soft HEAD~1
+	last = log -1 HEAD
+	cp = cherry-pick
+	hreset = reset --hard
+	df = diff --color --color-words --abbrev
+	dfs = diff --staged --color --color-words --abbrev
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	whatsmerged = branch --merged master | grep -v master
+	removemerged = branch --merged master | grep -v master | xargs -n 1 git branch -D
+	pruneorigin = remote prune origin
+	# checkout all files from a branch with pattern listed  -  $git super-checkout <branch> <pattern>
+	super-checkout = "!f() { git checkout $1 -- $(git ls-tree -r --name-only $1 | grep \"$2\"); }; f"
+	forceremovelastcommit = reset --hard HEAD~1 | xargs -n 1 git branch
+
+[core]
+	editor = code --wait
+
+# so much color
+[color]
+	ui = auto
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+    newMoved = cyan
+    oldMoved = blue
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
