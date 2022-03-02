@@ -17,7 +17,7 @@ if [ -f '/Users/alex.liang/Downloads/google-cloud-sdk/completion.bash.inc' ]; th
 # This prompt inspired by gf3, sindresorhus, alrra, and mathiasbynens.
 # but customized to me. <3
 
-default_username='paulirish'
+default_username='alexliang'
 
 
 if which thefuck > /dev/null; then
